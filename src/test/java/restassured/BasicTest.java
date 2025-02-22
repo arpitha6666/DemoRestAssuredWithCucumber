@@ -2,6 +2,7 @@ package restassured;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
+import org.testng.Assert;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.*;
@@ -9,6 +10,7 @@ import static org.hamcrest.Matchers.*;
 public class BasicTest {
 
     public static void main(String[] args){
+        String newAddress="70 winter walk, USA";
         //https://rahulshettyacademy.com/maps/api/place/add/json?key=qaclick123
         RestAssured.baseURI = "https://rahulshettyacademy.com/";
         String response =given().queryParam("key","qaclick123")
@@ -43,7 +45,7 @@ public class BasicTest {
                 .header("Content-Type","application/json")
                 .body("{\n" +
                         "\"place_id\":\""+placeId+"\",\n" +
-                        "\"address\":\"70 winter walk, USA\",\n" +
+                        "\"address\":\""+newAddress+"\",\n" +
                         "\"key\":\"qaclick123\"\n" +
                         "}")
                 .when().put("maps/api/place/update/json")
@@ -51,6 +53,14 @@ public class BasicTest {
                 .body("msg",equalTo("Address successfully updated"));
 
         //get the new address is present in the response
+        String getResponse =given().log().all().queryParam("key","qaclick123")
+                .queryParam("place_id",placeId)
+                .when().get("maps/api/place/get/json")
+                .then().assertThat().statusCode(200)
+                .extract().response().asString();
+        JsonPath getJson = new JsonPath(getResponse);
+        String getNewAddr= getJson.getString("address");
+        Assert.assertEquals(getNewAddr,newAddress);
 
     }
 }
