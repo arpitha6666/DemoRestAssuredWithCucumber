@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 
-public class CoursePriceTest {
+public class GetCoursePriceTest {
     //TODO
     /*
         1. Print No of courses returned by API
