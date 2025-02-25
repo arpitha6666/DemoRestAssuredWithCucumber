@@ -1,14 +1,13 @@
 package restassured;
 
-import io.restassured.RestAssured;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import model.AddPlace;
-import model.Location;
+import model.mapsapi.AddPlace;
+import model.mapsapi.Location;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;

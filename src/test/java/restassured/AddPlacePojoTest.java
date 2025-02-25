@@ -1,15 +1,14 @@
 package restassured;
 
 import io.restassured.RestAssured;
-import model.AddPlace;
-import model.Location;
+import model.mapsapi.AddPlace;
+import model.mapsapi.Location;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.equalTo;
 
 public class AddPlacePojoTest {
     @Test

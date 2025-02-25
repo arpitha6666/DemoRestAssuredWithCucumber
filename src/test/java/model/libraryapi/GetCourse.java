@@ -1,7 +1,4 @@
-package model;
-
-import java.io.Serializable;
-import java.util.List;
+package model.libraryapi;
 
 public class GetCourse {
 

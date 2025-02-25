@@ -1,4 +1,4 @@
-package model;
+package model.mapsapi;
 
 public class Location {
     private Double lat;

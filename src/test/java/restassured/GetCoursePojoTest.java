@@ -1,11 +1,10 @@
 package restassured;
 
 import io.restassured.RestAssured;
-import io.restassured.parsing.Parser;
 import io.restassured.path.json.JsonPath;
-import model.Api;
-import model.GetCourse;
-import model.WebAutomation;
+import model.libraryapi.Api;
+import model.libraryapi.GetCourse;
+import model.libraryapi.WebAutomation;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 

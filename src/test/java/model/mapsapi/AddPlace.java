@@ -1,4 +1,4 @@
-package model;
+package model.mapsapi;
 
 import java.util.List;
 
