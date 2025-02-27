@@ -1,4 +1,4 @@
-package restassured;
+package restassured.restassuredTests;
 
 import data.LibraryDataProvider;
 import data.Payload;

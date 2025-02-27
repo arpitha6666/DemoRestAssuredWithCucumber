@@ -1,4 +1,4 @@
-package restassured;
+package restassured.restassuredTests;
 
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;

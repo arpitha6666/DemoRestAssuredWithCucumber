@@ -1,4 +1,4 @@
-package restassured;
+package restassured.restassuredTests;
 
 import io.restassured.RestAssured;
 import model.mapsapi.AddPlace;
