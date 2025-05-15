@@ -28,6 +28,7 @@ public class GetCoursePojoTest {
                 .formParams("grant_type","client_credentials")
                 .formParams("scope","trust")
                 .when().post("oauthapi/oauth2/resourceOwner/token").asString();
+
         JsonPath js = new JsonPath(postResponse);
         String accessToken = js.getString("access_token");
 
@@ -35,6 +36,8 @@ public class GetCoursePojoTest {
                 .queryParams("access_token", accessToken)
                 .when().log().all()
                 .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails").as(GetCourse.class);
+
+
 
         //get the price of 'SoapUI Webservices testing'
         List<Api> apiCourses = gc.getCourses().getApi();

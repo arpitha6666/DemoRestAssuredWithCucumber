@@ -14,10 +14,8 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.*;
 import static util.JsonUtil.rawToJsonPath;
 
 public class LibraryApiTest {

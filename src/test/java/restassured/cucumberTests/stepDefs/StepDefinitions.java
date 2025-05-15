@@ -8,6 +8,8 @@ import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
+import model.mapsapi.AddPlace;
+import model.mapsapi.AddPlaceResponse;
 import restassured.cucumberTests.TestData.AddPlaceTestDataBuilder;
 import util.APIResources;
 import util.JsonUtil;
@@ -38,6 +40,10 @@ public class StepDefinitions extends Utility {
         if (httpMethod.equalsIgnoreCase("POST")) {
             response = reqSpec.when().post(APIResources.valueOf(resource).getResource())
                     .then().spec(getResSpec()).extract().response();
+
+            AddPlaceResponse responseObject = reqSpec.when().post(APIResources.valueOf(resource).getResource())
+                    .then().spec(getResSpec()).extract().response().as(AddPlaceResponse.class);
+            System.out.println(responseObject.toString());
         } else if (httpMethod.equalsIgnoreCase("GET")) {
             response = reqSpec.when().get(APIResources.valueOf(resource).getResource())
                     .then().spec(getResSpec()).extract().response();
